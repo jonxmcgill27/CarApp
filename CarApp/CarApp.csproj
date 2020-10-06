@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarApp.DataAccess\CarApp.DataAccess.csproj" />
+    <ProjectReference Include="..\CarApp.Models\CarApp.Models.csproj" />
   </ItemGroup>
 
 </Project>
