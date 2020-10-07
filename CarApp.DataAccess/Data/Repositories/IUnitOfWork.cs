@@ -4,10 +4,10 @@ using System.Text;
 
 namespace CarApp.DataAccess.Data.Repositories
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         IEventRepository Event { get; }
-        //ICarRepository Car { get; }
+        ICarRepository Car { get; }
         void Save();
     }
 }

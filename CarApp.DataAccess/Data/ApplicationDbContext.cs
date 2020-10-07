@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CarApp.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,5 +13,8 @@ namespace CarApp.DataAccess
             : base(options)
         {
         }
+
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Car> Cars { get; set; }
     }
 }
