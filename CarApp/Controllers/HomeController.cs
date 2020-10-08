@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using CarApp.DataAccess.Data.Repositories;
@@ -27,7 +28,15 @@ namespace CarApp.Controllers
 
         public IActionResult Index()
         {
+            string imgDataURL = null;
             var events = _unitOfWork.Event.GetAll();
+            foreach(var item in events)
+            {
+                string imreBase64Data = Convert.ToBase64String(item.Image);
+                imgDataURL = string.Format("data:image;base64,{0}", imreBase64Data);
+            }
+
+            ViewBag.ImageData = imgDataURL;
             return View(events);
         }
 
