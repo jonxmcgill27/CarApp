@@ -20,7 +20,15 @@ else
             <card class="card-body">
                 <div class="row">
                     <div class="col-4">
-                        <img src="~/Asset/placeholder.jpg" style="width:337px; height:200px;" />
+                        @if (ViewBag.ImageData != null)
+                        {
+                            <img src="@ViewBag.ImageData" style="width:337px; height:200px;" />
+                        }
+                        else
+                        {
+                            <img src="~/Asset/placeholder.jpg" style="width:337px; height:200px;" />
+                        }
+
                     </div>
                     <div class="col-8 pl-0">
                         @item.Title
