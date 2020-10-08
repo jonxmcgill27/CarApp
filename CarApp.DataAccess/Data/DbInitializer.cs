@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CarApp.DataAccess.Data
 {
@@ -32,6 +30,9 @@ namespace CarApp.DataAccess.Data
             {
                 Console.WriteLine("Migration Failed");
             }
+
+            IdentityUser user = await _db.Users.FirstOrDefaultAsync(u => u.Email == "origin@carapp.com");
+            if (user != null) return;
 
             _userManager.CreateAsync(new ApplicationUser
             {
