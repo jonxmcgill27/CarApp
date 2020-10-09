@@ -40,6 +40,11 @@ namespace CarApp.Controllers
             return View(events);
         }
 
+        public IActionResult EventForm()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
