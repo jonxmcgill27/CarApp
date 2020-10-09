@@ -14,9 +14,11 @@ namespace CarApp.Models
         public string Title { get; set; }
 
         [Required]
+        [Display(Name = "Start Date")]
         public DateTime DateStart { get; set; }
 
         [Required]
+        [Display(Name = "End Date")]
         public DateTime DateEnd { get; set; }
 
         [Required]

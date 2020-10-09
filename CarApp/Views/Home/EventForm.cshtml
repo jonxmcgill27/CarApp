@@ -1,4 +1,5 @@
-﻿@*
+﻿@model Event
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -9,8 +10,31 @@
 <div class="col-6 ml-auto mr-auto">
     <form>
         <div class="form-group">
-            <label>Title</label>
-            <input class="form-control">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control">
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateStart"></label>
+            <input asp-for="DateStart" class="form-control">
+            <span asp-validation-for="DateStart"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateEnd"></label>
+            <input asp-for="DateEnd" class="form-control">
+            <span asp-validation-for="DateEnd"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label for="image">Upload an Image</label>
+            <input type="file" class="form-control-file" id="eventImage">
+        </div>
+        <div class="form-group text-right">
+            <button type="button" class="btn btn-primary">Create Event</button>
         </div>
     </form>
 </div>
