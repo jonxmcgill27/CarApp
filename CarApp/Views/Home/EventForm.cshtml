@@ -1,9 +1,5 @@
 ﻿@model Event
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+
 
 <p>Event form</p>
 
@@ -12,30 +8,35 @@
         <div class="form-group">
             <label asp-for="Title"></label>
             <input asp-for="Title" class="form-control">
-            <span asp-validation-for="Title"></span>
+            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="DateStart"></label>
             <input asp-for="DateStart" class="form-control">
-            <span asp-validation-for="DateStart"></span>
+            <span asp-validation-for="DateStart" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="DateEnd"></label>
             <input asp-for="DateEnd" class="form-control">
-            <span asp-validation-for="DateEnd"></span>
+            <span asp-validation-for="DateEnd" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Description"></label>
             <textarea asp-for="Description" class="form-control"></textarea>
-            <span asp-validation-for="Description"></span>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label for="image">Upload an Image</label>
-            <input type="file" class="form-control-file" id="eventImage">
+            <label asp-for="Image">Upload an Image</label>
+            <input type="file" asp-for="Image" class="form-control-file" id="eventImage">
+            <span asp-validation-for="Image" class="text-danger"></span>
         </div>
         <div class="form-group text-right">
-            <button type="button" class="btn btn-primary">Create Event</button>
+            <button type="submit" class="btn btn-primary">Create Event</button>
         </div>
     </form>
 </div>
-   
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
