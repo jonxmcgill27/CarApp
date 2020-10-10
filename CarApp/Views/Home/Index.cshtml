@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Event>
+﻿@model IEnumerable<EventGatheringVM>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -24,7 +24,7 @@ else
                     <div class="col-4">
                         @if (ViewBag.ImageData != null)
                         {
-                            <img src="@ViewBag.ImageData" style="width:337px; height:200px;" />
+                            <img src="@item.ImageFormatted" style="width:337px; height:200px;" />
                         }
                         else
                         {

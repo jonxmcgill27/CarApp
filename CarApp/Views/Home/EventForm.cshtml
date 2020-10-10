@@ -1,10 +1,10 @@
-﻿@model Event
+﻿@model EventGatheringVM
 
 
 <p>Event form</p>
 
 <div class="col-6 ml-auto mr-auto">
-    <form>
+    <form enctype="multipart/form-data" method="post" asp-action="SubmitEventForm">
         <div class="form-group">
             <label asp-for="Title"></label>
             <input asp-for="Title" class="form-control">
@@ -12,12 +12,12 @@
         </div>
         <div class="form-group">
             <label asp-for="DateStart"></label>
-            <input asp-for="DateStart" class="form-control">
+            <input type="date" asp-for="DateStart" class="form-control">
             <span asp-validation-for="DateStart" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="DateEnd"></label>
-            <input asp-for="DateEnd" class="form-control">
+            <input type="date" asp-for="DateEnd" class="form-control">
             <span asp-validation-for="DateEnd" class="text-danger"></span>
         </div>
         <div class="form-group">
@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
             <label asp-for="Image">Upload an Image</label>
-            <input type="file" asp-for="Image" class="form-control-file" id="eventImage">
+            <input asp-for="Image" accept="image/*"  class="form-control-file">
             <span asp-validation-for="Image" class="text-danger"></span>
         </div>
         <div class="form-group text-right">

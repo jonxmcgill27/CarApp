@@ -14,7 +14,7 @@ namespace CarApp.DataAccess
         {
         }
 
-        public DbSet<Event> Events { get; set; }
+        public DbSet<EventGathering> Events { get; set; }
         public DbSet<Car> Cars { get; set; }
     }
 }
