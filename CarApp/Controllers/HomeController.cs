@@ -41,8 +41,8 @@ namespace CarApp.Controllers
                 eventVM.DateEnd = item.DateEnd;
                 eventVM.Description = item.Description;
 
-                string imreBase64Data = Convert.ToBase64String(item.Image);
-                imgDataURL = string.Format("data:image;base64,{0}", imreBase64Data);
+                string imgToBase64Data = Convert.ToBase64String(item.Image);
+                imgDataURL = string.Format("data:image;base64,{0}", imgToBase64Data);
 
                 eventVM.ImageFormatted = imgDataURL;
                 eventVMs.Add(eventVM);
@@ -50,7 +50,7 @@ namespace CarApp.Controllers
             }
 
 
-            ViewBag.ImageData = imgDataURL;
+    
             return View(eventVMs);
         }
 

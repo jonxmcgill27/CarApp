@@ -21,16 +21,8 @@ else
         <div class="card">
             <card class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        @if (ViewBag.ImageData != null)
-                        {
-                            <img src="@item.ImageFormatted" style="width:337px; height:200px;" />
-                        }
-                        else
-                        {
-                            <img src="~/Asset/placeholder.jpg" style="width:337px; height:200px;" />
-                        }
-
+                    <div class="col-4">                       
+                        <img src="@item.ImageFormatted" style="width:337px; height:200px;" />                  
                     </div>
                     <div class="col-8 pl-0">
                         @item.Title
