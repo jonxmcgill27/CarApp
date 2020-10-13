@@ -28,7 +28,6 @@ namespace CarApp.Controllers
           
         }
 
-        //retrieve events
         public IActionResult Index()
         {
             string imgDataURL = null;
