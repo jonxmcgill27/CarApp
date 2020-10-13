@@ -58,7 +58,7 @@ namespace CarApp.DataAccess.Data
                 file.Dispose();
             }
 
-            Event event1 = new Event() {
+            EventGathering event1 = new EventGathering() {
                 Title = "Mustang Showing",
                 DateStart = new DateTime(2020, 11, 05),
                 DateEnd = new DateTime(2020, 11, 06),

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CarApp.DataAccess.Data.Repositories
 {
-    public class EventRepository : Repository<Event>, IEventRepository
+    public class EventRepository : Repository<EventGathering>, IEventRepository
     {
         private readonly ApplicationDbContext _db;
 

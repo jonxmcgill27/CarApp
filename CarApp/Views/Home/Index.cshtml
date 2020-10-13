@@ -1,8 +1,12 @@
-﻿@model IEnumerable<Event>
+﻿@model IEnumerable<EventGatheringVM>
 @{
     ViewData["Title"] = "Home Page";
 }
 
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
 
 @if (Model.Count() == 0)
 {
@@ -15,16 +19,8 @@ else
         <div class="card">
             <card class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        @if (ViewBag.ImageData != null)
-                        {
-                            <img src="@ViewBag.ImageData" style="width:337px; height:200px;" />
-                        }
-                        else
-                        {
-                            <img src="~/Asset/placeholder.jpg" style="width:337px; height:200px;" />
-                        }
-
+                    <div class="col-4">                       
+                        <img src="@item.ImageFormatted" style="width:337px; height:200px;" />                  
                     </div>
                     <div class="col-8 pl-0">
                         @item.Title
